@@ -1,0 +1,43 @@
+# Define a list of questions and their corresponding answers
+questions = [
+    {
+        "question": "Who is the main character (Traveler) in Genshin Impact?",
+        "options": ["Lumine", "Paimon", "Venti", "None of the above"],
+        "answer": "Lumine"
+    },
+    {
+        "question": "Which region is known as the City of Freedom in Genshin Impact?",
+        "options": ["Liyue Harbor", "Inazuma", "Sumeru City", "Mondstadt"],
+        "answer": "Mondstadt"
+    },
+    {
+        "question": "What is the name of the region in Genshin Impact that is ruled by the Electro Archon?",
+        "options": ["Mondstadt", "Inazuma", "Liyue", "Sumeru"],
+        "answer": "Inazuma"
+    },
+    {
+        "question": "Who is not an archon?",
+        "options": ["Zongli", "Nahida", "Furina", "Raiden"],
+        "answer": "Furina"
+    }
+]
+
+# Initialize a variable to keep track of the player's score
+score = 0
+
+# Loop through each question and ask the player for their answer
+for question in questions:
+    print(question["question"])
+    for i, option in enumerate(question["options"], 1):
+        print(f"{i}. {option}")
+    player_answer = input("Enter your answer (1, 2, 3, 4): ")
+
+    # Check if the player's answer is correct
+    if player_answer == str(question["options"].index(question["answer"]) + 1):
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect!")
+
+# Display the final score to the player
+print(f"Your final score is: {score}/{len(questions)}")
